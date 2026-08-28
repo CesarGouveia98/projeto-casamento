@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1. IMPORTAÇÃO DE FONTES DO GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* 2. VARIÁVEIS GLOBAIS (DESIGN SYSTEM) */
+:root {
+  /* Cores Principais Extraídas do Design */
+  --color-gold-primary: #C5A059;
+  --color-gold-light: #E8D3A7;
+  --color-gold-dark: #8E6D2F;
+  --color-hydrangea-purple: #7B82C9;
+  --color-hydrangea-soft: #EBF0FF;
+  
+  /* Cores Neutras e de Base */
+  --color-text-main: #2C2C2C;
+  --color-text-muted: #666666;
+  --color-bg-light: #FBFBFA;
+  --color-white: #FFFFFF;
+
+  /* Tipografias */
+  --font-title: 'Great Vibes', cursive;       /* Para nomes dos noivos e destaques "Célia & César" */
+  --font-heading: 'Cinzel', serif;           /* Para títulos elegância clássica */
+  --font-body: 'Montserrat', sans-serif;     /* Para textos de leitura fácil e formulários */
+
+  /* Sombras e Efeitos */
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-button: 0 4px 12px rgba(197, 160, 89, 0.3);
+  --border-radius-card: 16px;
+  --border-radius-btn: 25px;
+}
+
+/* 3. RESET & COMPORTAMENTO DE APP MOBILE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; /* Remove o quadrado azul ao tocar em botões no mobile */
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #121212; /* Fundo escuro na área externa para destacar o frame mobile no desktop */
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Evita seleção acidental de texto ao arrastar/clicar num App PWA */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Permitir seleção apenas em inputs para o utilizador conseguir escrever */
+input, textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* 4. LAYOUT CONTÊINER MOBILE (Simula ecrã de telemóvel no Desktop) */
+app-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/* Estrutura Base das Telas (Container Reutilizável) */
+.mobile-container {
+  width: 100%;
+  max-width: 430px; /* Largura padrão de ecrãs mobile (iPhone 14/15 Pro, etc.) */
+  height: 100vh;
+  max-height: 932px;
+  position: relative;
+  background-color: var(--color-white);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Esconder barra de scroll mantendo a funcionalidade */
+.mobile-container::-webkit-scrollbar {
+  display: none;
+}
+.mobile-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 5. CLASSES DE UTILIDADE DE BOTÕES DOURADOS (REUTILIZÁVEIS) */
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold-primary) 50%, var(--color-gold-dark) 100%);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-btn);
+  padding: 12px 28px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-gold:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(197, 160, 89, 0.4);
+}

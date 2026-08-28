@@ -1,0 +1,104 @@
+.install-screen {
+  background-color: var(--color-white);
+  background-image: url('../../../../assets/backgrounds/background1.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  justify-content: space-between;
+  padding: 3rem 1.5rem 2rem 1.5rem;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.wedding-title {
+  font-family: 'Great Vibes', 'Alex Brush', cursive; /* Fonte estilo manuscrita */
+  font-size: 2.8rem;
+  color: var(--color-gold-dark);
+  font-weight: 400;
+  margin-top: 4rem;
+  margin-right: 4.5rem;
+  transform: rotate(-10deg); /* Inclinação leve para a esquerda */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+}
+
+.photo-frame {
+  width: 220px;
+  max-width: 70%;
+  margin: -1.65rem 0;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.12));
+}
+
+.couple-photo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.wedding-subtitle {
+  font-family: 'Great Vibes', 'Alex Brush', cursive;
+  font-size: 2.2rem;
+  color: var(--color-text-main);
+  margin-bottom: 2rem;
+  margin-left: 5.25rem;
+  transform: rotate(-10deg); /* Inclinação leve para a direita */
+}
+
+.action-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.instruction-text {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  font-style: italic;
+  transform: rotate(0deg); /* Pequeno ajuste de ângulo se quiser alinhar */
+}
+
+.btn-install {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-install:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.skip-link {
+  background: none;
+  border: none;
+  color: var(--color-gold-primary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-weight: bolder;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 2rem;
+}

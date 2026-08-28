@@ -1,0 +1,37 @@
+<div class="mobile-container install-screen">
+  <!-- Fundo de Hortênsias superior/inferior -->
+  <div class="bg-layer"></div>
+
+  <main class="content">
+    <!-- Nomes dos Noivos em Texto CSS -->
+    <h1 class="wedding-title">Célia & César</h1>
+
+    <!-- Moldura com Foto dos Noivos -->
+    <div class="photo-frame">
+      <img src="./assets/images/foto-noivos-moldura.png" alt="Célia e César" class="couple-photo" />
+    </div>
+
+    <p class="wedding-subtitle">Vão casar!!</p>
+
+    <!-- Área do Botão de Instalação -->
+    <div class="action-section">
+      <p class="instruction-text">
+        Por favor, clique no Botão abaixo<br />
+        para baixar a <strong>App Oficial</strong>
+      </p>
+
+      <button class="btn-install" (click)="installPwa()" aria-label="Instalar App Oficial">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </button>
+
+      <!-- Atalho de navegação direta para testes/desenvolvimento -->
+      <button class="skip-link" (click)="advanceToLogin()">
+        Já tenho a app / Continuar &rarr;
+      </button>
+    </div>
+  </main>
+</div>

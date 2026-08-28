@@ -1,0 +1,42 @@
+<div class="mobile-container login-screen">
+  <main class="content">
+    <div class="login-card">
+      <form (ngSubmit)="onSubmit()" class="login-form">
+        
+        <!-- Campo Nome -->
+        <div class="form-group">
+          <label for="fullName">Nome Completo</label>
+          <input 
+            type="text" 
+            id="fullName" 
+            placeholder="Full_Name_ID" 
+            class="form-input"
+            required />
+        </div>
+
+        <!-- Campo Data de Nascimento -->
+        <div class="form-group">
+          <label for="birthDate">Data de Nascimento</label>
+          <input 
+            type="text" 
+            id="birthDate" 
+            placeholder="DD/MM/AA" 
+            class="form-input"
+            required />
+        </div>
+
+        <!-- Botão QR Code -->
+        <div class="qr-section">
+          <p class="qr-label">Recebeu código QR?</p>
+          <button type="button" class="btn-qr" (click)="openQrScanner()">
+            <img src="assets/icons/scan.png" alt="Escanear QR Code" />
+          </button>
+        </div>
+
+        <!-- Botão Guardar -->
+        <button type="submit" class="btn-submit">Guardar</button>
+
+      </form>
+    </div>
+  </main>
+</div>
