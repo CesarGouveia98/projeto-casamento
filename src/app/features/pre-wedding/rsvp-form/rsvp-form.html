@@ -1,15 +1,18 @@
 <div class="mobile-container login-screen">
   <main class="content">
     <div class="login-card">
+      <h2 class="form-title">Confirmação de Presença</h2>
+
       <form (ngSubmit)="onSubmit()" class="login-form">
-        
         <!-- Campo Nome -->
         <div class="form-group">
           <label for="fullName">Nome Completo</label>
           <input 
             type="text" 
             id="fullName" 
-            placeholder="Full_Name_ID" 
+            [(ngModel)]="fullName"
+            name="fullName"
+            placeholder="O seu nome completo" 
             class="form-input"
             required />
         </div>
@@ -20,22 +23,55 @@
           <input 
             type="text" 
             id="birthDate" 
-            placeholder="DD/MM/AA" 
-            class="form-input"
-            required />
+            [(ngModel)]="birthDate"
+            name="birthDate"
+            placeholder="DD/MM/AAAA" 
+            class="form-input" />
+        </div>
+
+        <!-- Seleção de Presença -->
+        <div class="form-group presence-options">
+          <label>Vai conseguir celebrar connosco?</label>
+          <div class="btn-group">
+            <button 
+              type="button" 
+              class="btn-option" 
+              [class.active]="attendance === 'attending'"
+              (click)="selectAttendance('attending')">
+              Sim, com certeza!
+            </button>
+            <button 
+              type="button" 
+              class="btn-option" 
+              [class.active]="attendance === 'declined'"
+              (click)="selectAttendance('declined')">
+              Lamento, não poderei
+            </button>
+          </div>
+        </div>
+
+        <!-- Mensagem aos Noivos -->
+        <div class="form-group">
+          <label for="message">Escreva a sua mensagem</label>
+          <textarea 
+            id="message" 
+            [(ngModel)]="message"
+            name="message"
+            rows="3" 
+            placeholder="Deixe um carinho aos noivos..." 
+            class="form-input"></textarea>
         </div>
 
         <!-- Botão QR Code -->
         <div class="qr-section">
-          <p class="qr-label">Recebeu código QR?</p>
+          <p class="qr-label">Recebeu código QR no convite?</p>
           <button type="button" class="btn-qr" (click)="openQrScanner()">
             <img src="assets/icons/scan.png" alt="Escanear QR Code" />
           </button>
         </div>
 
         <!-- Botão Guardar -->
-        <button type="submit" class="btn-submit">Guardar</button>
-
+        <button type="submit" class="btn-gold">Guardar e Prosseguir &rarr;</button>
       </form>
     </div>
   </main>

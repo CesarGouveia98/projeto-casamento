@@ -1,0 +1,32 @@
+<div class="mobile-container journey-screen">
+  <main class="content">
+    <header class="journey-header">
+      <h2 class="title">Agora por onde gostaria de ir?</h2>
+      <p class="subtitle">Escolha o seu destino no nosso grande dia</p>
+    </header>
+
+    <div class="options-container">
+      <!-- Opção 1: Igreja / Fotos -->
+      <div class="card-option" (click)="goToChurchMap()">
+        <div class="card-image-box">
+          <img src="assets/backgrounds/church.png" alt="O Sonho Fotográfico" class="card-img" />
+        </div>
+        <div class="card-info">
+          <h3>O Sonho Fotográfico</h3>
+          <p>Igreja & Sessão de Fotos</p>
+        </div>
+      </div>
+
+      <!-- Opção 2: Copo de Água -->
+      <div class="card-option" (click)="goToTableMap()">
+        <div class="card-image-box">
+          <img src="assets/images/Jardim.png" alt="O Copo de Água" class="card-img" />
+        </div>
+        <div class="card-info">
+          <h3>O Copo de Água</h3>
+          <p>Quinta & Lugar na Mesa</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

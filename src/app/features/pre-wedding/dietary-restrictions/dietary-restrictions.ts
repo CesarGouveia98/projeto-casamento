@@ -15,7 +15,6 @@ export class DietaryRestrictions {
   private rsvpService = inject(RsvpService);
   private router = inject(Router);
 
-  // Estado das restrições alimentares do convidado
   dietaryRestrictions = {
     vegetarian: false,
     vegan: false,
@@ -27,14 +26,16 @@ export class DietaryRestrictions {
   };
 
   saveRestrictions(): void {
-    // Exemplo de integração com o serviço Observer
-    this.rsvpService.updateGuestConfirmation({
-      id: 'guest-' + Date.now(),
-      isConfirmed: true,
-      dietaryRestrictions: this.dietaryRestrictions
-    } as any);
+    const currentGuest = this.rsvpService.getCurrentGuest();
 
-    // Avança para o Countdown (Dia do Casamento)
+    if (currentGuest) {
+      this.rsvpService.updateGuestConfirmation({
+        ...currentGuest,
+        isConfirmed: true,
+        dietaryRestrictions: this.dietaryRestrictions
+      });
+    }
+
     this.router.navigate(['/countdown']);
   }
 

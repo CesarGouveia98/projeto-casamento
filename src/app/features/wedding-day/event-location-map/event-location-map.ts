@@ -75,7 +75,7 @@ export class EventLocationMap implements OnInit {
     window.open(url, '_blank');
   }
 
-  goToTableMap(): void {
-    this.router.navigate(['/table-map']);
-  }
+  goToJourneySelection(): void {
+  this.router.navigate(['/journey-selection']); 
+}
 }

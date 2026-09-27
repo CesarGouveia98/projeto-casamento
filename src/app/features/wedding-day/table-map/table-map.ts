@@ -87,7 +87,7 @@ export class TableMap implements OnInit {
     this.tableMates = this.mockGuests.filter(g => this.assignedTable?.assignedGuestIds.includes(g.id));
   }
 
-  goToDashboard(): void {
-    this.router.navigate(['/admin-dashboard']);
+  goToJourneySelection(): void {
+    this.router.navigate(['/journey-selection']);
   }
 }

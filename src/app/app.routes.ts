@@ -7,6 +7,7 @@ import { DietaryRestrictions } from './features/pre-wedding/dietary-restrictions
 import { Countdown } from './features/wedding-day/countdown/countdown';
 import { EventLocationMap } from './features/wedding-day/event-location-map/event-location-map';
 import { TableMap } from './features/wedding-day/table-map/table-map';
+import { JourneySelection } from './features/wedding-day/journey-selection/journey-selection';
 
 import { DashboardStats } from './features/admin-dashboard/dashboard-stats/dashboard-stats';
 
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'dietary-restrictions', component: DietaryRestrictions },
 
   { path: 'countdown', component: Countdown },
+  { path: 'journey-selection', component: JourneySelection },
   { path: 'location-map', component: EventLocationMap },
   { path: 'table-map', component: TableMap },
 

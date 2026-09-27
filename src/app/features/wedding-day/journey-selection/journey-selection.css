@@ -1,0 +1,77 @@
+.journey-screen {
+  background-color: var(--color-white, #ffffff);
+  background-image: url('../../../../assets/backgrounds/background1.png');
+  background-size: cover;
+  background-position: center;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.journey-header {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-family: var(--font-heading, 'Cinzel', serif);
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.card-option {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-gold-light, #e8d3a7);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card-option:active {
+  transform: scale(0.98);
+}
+
+.card-image-box {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-info h3 {
+  font-family: var(--font-heading, 'Cinzel', serif);
+  font-size: 1.1rem;
+  color: var(--color-gold-dark, #8e6d2f);
+  margin: 0 0 0.3rem 0;
+}
+
+.card-info p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
