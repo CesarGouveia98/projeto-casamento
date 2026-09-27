@@ -1,1 +1,39 @@
-<p>table-map works!</p>
+<div class="mobile-container table-screen">
+  <main class="content">
+    <div class="table-card">
+      
+      <header class="card-header">
+        <h2 class="section-title">O Seu Lugar na Festa</h2>
+        <p class="section-subtitle">Consulte a sua mesa e os seus acompanhantes</p>
+      </header>
+
+      <!-- Cartão com a Mesa Atribuída -->
+      <div class="table-badge-box">
+        <div class="table-icon">🍽️</div>
+        <h3 class="table-name">{{ assignedTable?.tableName || 'Mesa Sem Nome' }}</h3>
+        <span class="capacity-tag">Capacidade: {{ assignedTable?.capacity }} pessoas</span>
+      </div>
+
+      <!-- Lista de Acompanhantes da Mesa -->
+      <div class="seating-list-container">
+        <h4 class="list-title">Companheiros de Mesa:</h4>
+        <ul class="guest-list">
+          @for (guest of tableMates; track guest.id) {
+            <li class="guest-item" [class.is-user]="guest.id === '1'">
+              <span class="guest-avatar">{{ guest.fullName.charAt(0) }}</span>
+              <span class="guest-name">{{ guest.fullName }} {{ guest.id === '1' ? '(Você)' : '' }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Ações -->
+      <div class="actions">
+        <button class="btn-primary" (click)="goToDashboard()">
+          Ver Dashboard do Evento &rarr;
+        </button>
+      </div>
+
+    </div>
+  </main>
+</div>

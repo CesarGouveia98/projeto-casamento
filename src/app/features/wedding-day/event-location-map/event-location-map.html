@@ -1,1 +1,53 @@
-<p>event-location-map works!</p>
+<div class="mobile-container map-screen">
+  <main class="content">
+    <div class="map-card">
+      
+      <!-- Cabeçalho do Local -->
+      <header class="card-header">
+        <h2 class="section-title">Localização do Evento</h2>
+        <p class="section-subtitle">A caminho do nosso grande dia!</p>
+      </header>
+
+      <!-- Imagem / Ilustração da Igreja/Quinta -->
+      <div class="venue-image-box">
+        <img src="assets/backgrounds/church.png" alt="Igreja / Quinta do Casamento" class="venue-image" />
+      </div>
+
+      <!-- Informação de GPS Nativo -->
+      <div class="gps-info-box">
+        @if (loadingGps) {
+          <p class="gps-status">A obter a sua localização GPS...</p>
+        } @else if (distanceKm) {
+          <div class="distance-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Está a <strong>{{ distanceKm }} km</strong> do local</span>
+          </div>
+        } @else {
+          <p class="gps-status error">{{ gpsError || 'GPS indisponível' }}</p>
+        }
+      </div>
+
+      <!-- Detalhes do Endereço -->
+      <div class="address-details">
+        <h3>Quinta / Igreja do Evento</h3>
+        <p>Caminho Principal do Casamento, Nº 100</p>
+        <p>Madeira, Portugal</p>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="actions">
+        <button class="btn-navigate" (click)="openExternalMap()">
+          Abrir no GPS / Google Maps 🗺️
+        </button>
+
+        <button class="btn-next" (click)="goToTableMap()">
+          Ver Lugar na Mesa &rarr;
+        </button>
+      </div>
+
+    </div>
+  </main>
+</div>

@@ -1,0 +1,124 @@
+.countdown-screen {
+  background-color: var(--color-white, #ffffff);
+  background-image: url('../../../../assets/backgrounds/invite.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 85vh;
+  z-index: 2;
+}
+
+.card-wrapper {
+  width: 100%;
+  max-width: 380px;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Timer Grid */
+.timer-grid {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.timer-box {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(196, 178, 125, 0.5);
+  border-radius: 12px;
+  padding: 0.6rem 0.8rem;
+  min-width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timer-value {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4a5d4e;
+}
+
+.timer-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #777;
+  letter-spacing: 1px;
+}
+
+/* Save The Date Text */
+.title-section {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.save-title {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 1.8rem;
+  line-height: 1.1;
+  letter-spacing: 4px;
+  color: #333;
+  margin: 0;
+}
+
+.couple-names {
+  font-family: 'Great Vibes', 'Alex Brush', cursive;
+  font-size: 2.2rem;
+  color: #c4b27d;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Foto dos Noivos */
+.photo-frame {
+  width: 180px;
+  max-width: 65%;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.12));
+}
+
+.couple-photo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Botão de Ação */
+.action-section {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(180deg, #d8ca99 0%, #c4b27d 100%);
+  border: 1px solid #b8a570;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}

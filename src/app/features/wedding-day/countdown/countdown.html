@@ -1,1 +1,45 @@
-<p>countdown works!</p>
+<div class="mobile-container countdown-screen">
+  <main class="content">
+    <div class="card-wrapper">
+      
+      <!-- Bloco de Contagem Decrescente -->
+      <div class="timer-grid">
+        <div class="timer-box">
+          <span class="timer-value">{{ days }}</span>
+          <span class="timer-label">Dias</span>
+        </div>
+        <div class="timer-box">
+          <span class="timer-value">{{ hours }}</span>
+          <span class="timer-label">Horas</span>
+        </div>
+        <div class="timer-box">
+          <span class="timer-value">{{ minutes }}</span>
+          <span class="timer-label">Min</span>
+        </div>
+        <div class="timer-box">
+          <span class="timer-value">{{ seconds }}</span>
+          <span class="timer-label">Seg</span>
+        </div>
+      </div>
+
+      <!-- Título Save The Date -->
+      <div class="title-section">
+        <h1 class="save-title">SAVE<br>THE<br>DATE</h1>
+        <p class="couple-names">Célia & César</p>
+      </div>
+
+      <!-- Moldura com Foto dos Noivos -->
+      <div class="photo-frame">
+        <img src="assets/images/foto-noivos-moldura.png" alt="Célia e César" class="couple-photo" />
+      </div>
+
+      <!-- Ação Principal -->
+      <div class="action-section">
+        <button class="btn-primary" (click)="goToLocationMap()">
+          Ver Localização do Evento &rarr;
+        </button>
+      </div>
+
+    </div>
+  </main>
+</div>

@@ -1,1 +1,66 @@
-<p>dietary-restrictions works!</p>
+<div class="mobile-container dietary-screen">
+  <main class="content">
+    <div class="dietary-card">
+      <header class="card-header">
+        <h2 class="section-title">Restrições Alimentares</h2>
+        <p class="section-subtitle">Ajude-nos a preparar o menu perfeito para si!</p>
+      </header>
+
+      <form (ngSubmit)="saveRestrictions()" class="dietary-form">
+        
+        <!-- Opções Rápidas (Checkboxes) -->
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" [(ngModel)]="dietaryRestrictions.vegetarian" name="vegetarian" />
+            <span class="custom-checkmark"></span>
+            <span class="label-text">Vegetariano / Vegan</span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" [(ngModel)]="dietaryRestrictions.lactose" name="lactose" />
+            <span class="custom-checkmark"></span>
+            <span class="label-text">Intolerante à Lactose</span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" [(ngModel)]="dietaryRestrictions.gluten" name="gluten" />
+            <span class="custom-checkmark"></span>
+            <span class="label-text">Intolerante ao Glúten (Celíaco)</span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" [(ngModel)]="dietaryRestrictions.seafood" name="seafood" />
+            <span class="custom-checkmark"></span>
+            <span class="label-text">Alergia a Marisco / Peixe</span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" [(ngModel)]="dietaryRestrictions.nuts" name="nuts" />
+            <span class="custom-checkmark"></span>
+            <span class="label-text">Alergia a Frutos Secos</span>
+          </label>
+        </div>
+
+        <!-- Outras Observações -->
+        <div class="form-group">
+          <label for="otherNotes">Outras Intolerâncias ou Alergias</label>
+          <textarea 
+            id="otherNotes" 
+            [(ngModel)]="dietaryRestrictions.other" 
+            name="other"
+            placeholder="Ex: Alergia grave a morangos ou prefiro menu sem pimenta..."
+            rows="3"
+            class="form-textarea">
+          </textarea>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="actions">
+          <button type="submit" class="btn-submit">Confirmar e Continuar</button>
+          <button type="button" class="btn-skip" (click)="skipSection()">Sem Restrições / Omitir</button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+</div>

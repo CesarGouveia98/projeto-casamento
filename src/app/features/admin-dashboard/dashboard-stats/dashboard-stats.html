@@ -1,1 +1,77 @@
-<p>dashboard-stats works!</p>
+<div class="mobile-container dashboard-screen">
+  <main class="content">
+    <div class="dashboard-card">
+      
+      <header class="card-header">
+        <h2 class="section-title">Painel dos Noivos</h2>
+        <p class="section-subtitle">Gestão em tempo real das confirmações e logística</p>
+      </header>
+
+      <!-- Grid de Cartões Estatísticos -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-value">{{ totalGuests }}</span>
+          <span class="stat-label">Total Convidados</span>
+        </div>
+
+        <div class="stat-card highlight">
+          <span class="stat-value">{{ confirmedGuests }}</span>
+          <span class="stat-label">Confirmados</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-value">{{ pendingGuests }}</span>
+          <span class="stat-label">Pendentes</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-value">{{ confirmationRate }}%</span>
+          <span class="stat-label">Taxa Sucesso</span>
+        </div>
+      </div>
+
+      <!-- Resumo de Dietas Especiais -->
+      <div class="dietary-section">
+        <h3 class="section-heading">Restrições Alimentares</h3>
+        <div class="dietary-list">
+          <div class="dietary-item">
+            <span>Vegetarianos / Vegan:</span>
+            <strong>{{ dietarySummary.vegetarianCount }}</strong>
+          </div>
+          <div class="dietary-item">
+            <span>Intolerantes à Lactose:</span>
+            <strong>{{ dietarySummary.lactoseCount }}</strong>
+          </div>
+          <div class="dietary-item">
+            <span>Intolerantes ao Glúten:</span>
+            <strong>{{ dietarySummary.glutenCount }}</strong>
+          </div>
+          <div class="dietary-item total">
+            <span>Total Menus Especiais:</span>
+            <strong>{{ dietarySummary.totalSpecialDiets }}</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel de Notificações Push -->
+      <div class="notification-section">
+        <h3 class="section-heading">Comunicação</h3>
+        <button class="btn-notify" (click)="triggerBroadcastNotification()">
+          🔔 Enviar Lembrete Push (Todos)
+        </button>
+
+        @if (notificationSentMessage) {
+          <p class="feedback-msg">{{ notificationSentMessage }}</p>
+        }
+      </div>
+
+      <!-- Voltar ao Início -->
+      <div class="actions">
+        <button class="btn-secondary" (click)="goToHome()">
+          &larr; Voltar à Tela Inicial
+        </button>
+      </div>
+
+    </div>
+  </main>
+</div>

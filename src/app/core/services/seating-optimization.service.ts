@@ -6,6 +6,9 @@ import { Table, SeatingAffinity } from '../../models/seating.model';
   providedIn: 'root'
 })
 export class SeatingOptimizationService {
+  getDietaryRestrictionsSummary(guestsList: Guest[]): { vegetarianCount: number; lactoseCount: number; glutenCount: number; totalSpecialDiets: number; } {
+    throw new Error('Method not implemented.');
+  }
 
   constructor() {}
 

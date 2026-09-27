@@ -2,22 +2,32 @@ import { Injectable } from '@angular/core';
 import { AppNotification, NotificationType } from '../../models/notification.model';
 
 export interface INotifier {
+  sendNotification(arg0: string, arg1: string): unknown;
   send(notification: AppNotification): void;
 }
 
 class PushNotifier implements INotifier {
+  sendNotification(arg0: string, arg1: string): unknown {
+    throw new Error('Method not implemented.');
+  }
   send(notification: AppNotification): void {
     console.log(`[Push Notification]: ${notification.title} - ${notification.message}`);
   }
 }
 
 class EmailNotifier implements INotifier {
+  sendNotification(arg0: string, arg1: string): unknown {
+    throw new Error('Method not implemented.');
+  }
   send(notification: AppNotification): void {
     console.log(`[Email Enviado]: ${notification.title} - ${notification.message}`);
   }
 }
 
 class SmsNotifier implements INotifier {
+  sendNotification(arg0: string, arg1: string): unknown {
+    throw new Error('Method not implemented.');
+  }
   send(notification: AppNotification): void {
     console.log(`[SMS Enviado]: ${notification.title} - ${notification.message}`);
   }
@@ -42,3 +52,5 @@ export class NotificationFactoryService {
     }
   }
 }
+
+export { NotificationType };
